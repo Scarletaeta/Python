@@ -1,4 +1,4 @@
-#This function checks whether you've closed all of your brackres '()' in Maths calculations
+#This function checks whether you've closed all of your round brackets '()' in Maths calculations
 
 def check_brackets(expression):
     bracket_list = []
