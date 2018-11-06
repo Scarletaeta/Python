@@ -1,0 +1,54 @@
+#I decided to use regex in a function to check whether all 3 types of brackets are opened/closed for a user input tell 
+#them how many of each are unopened or unclosed.
+
+#Methodology:   
+#take user input
+#get reg ex to match 3 types of opening brackets separately ({[ separately
+#match )}] separately
+#For each type of bracket:
+#difference = opening - closing
+#abs = abs(difference)
+#if difference = -/+ 1, then  there is 1 unopened/unclosed 'x' type of bracket respectively
+#elif difference < 0, there are 'abs' number of unopened 'x' type of brackets
+#elif difference > 0, there are 'abs' number of unclosed 'x' type brackets
+#else (if the difference == 0), they are all matched
+
+def check_all_brackets():
+    import re
+    expression = input('Type in your expression and this function will check the brackets: ')
+
+    roundb = len(re.findall('\(',expression)) - len(re.findall('\)',expression))
+    if roundb == -1:
+        print('There is 1 unopened round bracket')
+    elif roundb == 1:
+        print('There is 1 unclosed round bracket')
+    elif roundb < 0:
+        print('There are %d unopened round brackets' %(abs(roundb)))
+    elif roundb > 0: 
+        print('There are %d unopened round brackets' %(abs(roundb)))
+    else:
+        print('All of your round brackets are closed.')
+
+    curly = len(re.findall('{',expression)) - len(re.findall('}',expression))
+    if curly == -1:
+        print('There is 1 unopened curly bracket')
+    elif curly == 1:
+        print('There is 1 unclosed curly bracket')
+    elif curly < 0:
+        print('There are %d unopened curly brackets' %(abs(curly)))
+    elif curly > 0: 
+        print('There are %d unopened curly brackets' %(abs(curly)))
+    else:
+        print('All of your curly brackets are closed.')
+
+    square = len(re.findall('\[',expression)) - len(re.findall('\]',expression))    
+    if curly == -1:
+        print('There is 1 unopened curly bracket')
+    elif curly == 1:
+        print('There is 1 unclosed curly bracket')
+    elif square < 0:
+        print('There are %d unopened square brackets' %(abs(square)))
+    elif curly > 0: 
+        print('There are %d unopened square brackets' %(abs(square)))
+    else:
+        print('All of your square brackets are closed.')
