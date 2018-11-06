@@ -1,0 +1,15 @@
+#This function checks whether you've closed all of your brackres '()' in Maths calculations
+
+def check_brackets(expression):
+    bracket_list = []
+    for character in expression:
+        if character == '(':
+            bracket_list.append(character) #add opening brackets to the end of the list
+        if character == ')':
+            if len(bracket_list) == 0:
+                #the list is empty, so there must be no corresponding opening bracket!
+                return False
+            else:
+                #if there is a matching opening bracket, we can remove it from the list
+                bracket_list.pop()
+    return len(bracket_list) == 0 #returns true only if bracket_list is empty at the end, ie all the brackets are matched
