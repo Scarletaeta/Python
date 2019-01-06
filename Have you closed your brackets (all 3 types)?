@@ -1,3 +1,6 @@
+#THIS ONE DOESN'T WORK VERY WELL. Found that it does not consider the order of the brackets. Ie if the string contains ')(' 
+#it will consider that and opened and closed bracket. Need to work on this.
+
 #I decided to use regex in a function to check whether all 3 types of brackets are opened/closed for a user input tell 
 #them how many of each are unopened or unclosed.
 
