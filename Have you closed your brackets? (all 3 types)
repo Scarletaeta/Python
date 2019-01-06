@@ -1,0 +1,22 @@
+def check_brackets(expression):
+    '''
+    String -> boolean 
+    Checkes a string to see whether opened brackets are closed and vice versa.
+    '''
+    bracket_list = [] #list of brackets in the string. Empty at the start
+    
+    brackets = {'(' : ')' 
+            , '[' : ']', 
+            '{' : '}'} #a dictionary of all the brackets
+    
+    for character in expression: 
+        if character in brackets: #if the character is a key in the dictionary brackets
+            bracket_list.append(character) 
+        if character in brackets.values(): #if the character is a value in the dictionary drackets
+            if len(bracket_list) == 0:
+                
+                return False
+            else:
+                
+                bracket_list.pop()
+    return len(bracket_list) == 0
